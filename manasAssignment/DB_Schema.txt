@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS `satellite_management`;
+
+USE `satellite_management`;
+
+-- Table schema for launchers
+CREATE TABLE IF NOT EXISTS `launchers` (
+    `id` VARCHAR(255) PRIMARY KEY,
+    `type` ENUM('NEW', 'OLD', 'DEGRADED'),
+    `registered_on` DATE
+) ENGINE=InnoDB;
+
+-- Table schema for customer satellites
+CREATE TABLE IF NOT EXISTS `customer_satellites` (
+    `id` VARCHAR(255) PRIMARY KEY,
+    `launch_date` DATE,
+    `country` VARCHAR(255),
+    `launcher_id` VARCHAR(255),
+    `mass` INT,
+    FOREIGN KEY (`launcher_id`) REFERENCES `launchers`(`id`)
+) ENGINE=InnoDB;

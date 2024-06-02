@@ -1,0 +1,23 @@
+{
+  "jetty_config" : {
+    "jetty_host" : "127.0.0.1",
+    "jetty_port" : 9091,
+    "jetty_maxThread" : 100,
+    "jetty_minThread" : 10
+  },
+  "database" : {
+    "driver" : "com.mysql.jdbc.Driver",
+    "url" : "jdbc:mysql://127.0.0.1:3306/",
+    "name" : "tai_byoa_v3_stage",
+    "user" : "root",
+    "password" : "root",
+    "queryParams" : "?useSSL=false&useUnicode=yes&characterEncoding=UTF-8",
+    "initialPoolSize" : 1,
+    "maxPoolSize" : 5,
+    "query" : "SELECT 1"
+  },
+  "api-urls" : {
+  "launchers" : "https://isro.vercel.app/api/launchers",
+  "customer_satellites" : "https://isro.vercel.app/api/customer_satellites"
+  }
+}
